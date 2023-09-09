@@ -1,19 +1,19 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  url: postgres://emma_s_user:eSF2XIBn8pAhQbpm9SrRVSvIxyOmrtmO@dpg-ciiqe9lgkuvojjcrqqug-a/emma_s
+  url: postgres://backed_user:vc1gHT0RAGf66j3WFpdy5VK4T7T76Djb@dpg-cjua2knhdsdc73eb7llg-a/backed
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   port: 5432
-  username: emma_s_user
-  password: eSF2XIBn8pAhQbpm9SrRVSvIxyOmrtmO
+  username: backed_user
+  password: vc1gHT0RAGf66j3WFpdy5VK4T7T76Djb
 
 development:
   <<: *default
-  database: emma_s
+  database: backed
 
 test:
   <<: *default
-  database: emma_s
+  database: backed
 
 production:
   <<: *default
