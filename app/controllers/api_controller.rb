@@ -6,7 +6,7 @@ class ApiController < ApplicationController
       current_day = Time.now.strftime('%A')
       utc_time = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ')
   
-      github_file_url = 'https://github.com/Gmanlove/endpoint_project/blob/main/app/controllers/api_controller.rb'
+      github_file_url = 'https://github.com/Gmanlove/Backend-api/blob/main/app/controllers/api_controller.rb'
       github_repo_url = 'https://github.com/Gmanlove/Backend-api'
   
       response_data = {
