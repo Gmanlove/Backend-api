@@ -1,7 +1,7 @@
 class ApiController < ApplicationController
   def get_info
-    slack_name = 'EMMANUEL OBI'
-    track_param = params[:track] || 'backend' # Default to 'Backend' if track parameter is not provided
+    slack_name = params[:slack_name]
+    track = params[:track]&.downcase # Convert to lowercase if track is provided
 
     current_day = Time.now.strftime('%A')
     utc_time = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -13,7 +13,7 @@ class ApiController < ApplicationController
       slack_name: slack_name,
       current_day: current_day,
       utc_time: utc_time,
-      track: track_param.capitalize, # Capitalize the track parameter value
+      track: track,
       github_file_url: github_file_url,
       github_repo_url: github_repo_url,
       status_code: 200
