@@ -1,7 +1,7 @@
 class ApiController < ApplicationController
   def get_info
     slack_name = 'EMMANUEL OBI'
-    track_param = params[:track] || 'Backend' # Default to 'Backend' if track parameter is not provided
+    track_param = params[:track] || 'backend' # Default to 'Backend' if track parameter is not provided
 
     current_day = Time.now.strftime('%A')
     utc_time = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ')
